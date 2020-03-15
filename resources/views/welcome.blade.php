@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+@extends('layouts.app')
 
+@section('css')
         <!-- Styles -->
         <style>
             html, body {
@@ -53,6 +55,9 @@
                 margin-bottom: 30px;
             }
         </style>
+        
+@endsection
+@section('content')
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -85,3 +90,4 @@
                 </div>
             </div>
         </div>
+    @endsection
