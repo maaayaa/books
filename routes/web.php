@@ -15,4 +15,5 @@ Route::get('/' , 'ReviewController@index')->name('index');
 
 Auth::routes();
 
+Route::get('/review','ReviewController@create')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
