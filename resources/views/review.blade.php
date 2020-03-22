@@ -1,26 +1,18 @@
 @extends('layouts.app')
 
-@secrion('content')
-<h1 class="pagetitle">レビュー投稿ページ</h1>
-<div class="row justify-content-center container"></div>
-	<div class="col-md-10">
-		<form method='POST' action="" enctype="multipart/from-data">
-		@csrf
-		<div class="card">
-			<div class="card-body">
-				<div class="form-group">
-					<label>本のタイトル</label>
-					<inout type="text" class="form-control" name="title" placeholder="タイトルを入力">
-				</div>
-				<div class="form-group">
-				<lobel>レビュー本文</lobel>
-				</div>
-			</div>
-			
-		</div>
-		</form>
-	</div>
-	-----
+@section('content')
+<h1 class='pagetitle'>レビュー投稿ページ</h1>
+<div class="row justify-content-center container">
+    <div class="col-md-10">
+      <form method='POST' action="" enctype="multipart/form-data">
+        @csrf
+        <div class="card">
+            <div class="card-body">
+              <div class="form-group">
+                <label>本のタイトル</label>
+                <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
+              </div>
+              <div class="form-group">
               <label>レビュー本文</label>
                 <textarea class='description form-control' name='body' placeholder='本文を入力'></textarea>
               </div>
@@ -34,4 +26,5 @@
       </form>
     </div>
 </div>
+@endsection
 @endsection
