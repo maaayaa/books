@@ -18,11 +18,14 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $post = $request->all();
-        $request->file('image')->store('/public/images');
-        $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'body' => $post['body'],'image' => $request->file('image')->hashName()];
         
+    if ($request->hasFile('image')) {
+        $request->file('image')->store('/public/images');
+        $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'body' => $post['body'], 'image' => $request->file('image')->hashName()];
         Review::insert($data);
-
+        } else {
+            $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'body' => $post['body']];
+        }
         return redirect('/');
     }
 }
