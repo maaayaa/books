@@ -20,7 +20,7 @@ class ReviewController extends Controller
         $post = $request->all();
         
         $validatedData = $request->validate([
-        'title' => 'required|max:255',
+        'title' => 'required|max:5',
         'body' => 'required',
         'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
@@ -32,6 +32,7 @@ class ReviewController extends Controller
         } else {
             $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'body' => $post['body']];
         }
-        return redirect('/');
+        return redirect('/')->with('flash_message', '投稿が完了しました');
+        
     }
 }
