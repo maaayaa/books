@@ -52,7 +52,7 @@
             }
 
             .m-b-md {
-                margin-bottom: 40px;
+                margin-bottom: 50px;
             }
         </style>
         
